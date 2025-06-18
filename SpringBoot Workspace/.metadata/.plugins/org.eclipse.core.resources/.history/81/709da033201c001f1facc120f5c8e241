@@ -1,0 +1,5 @@
+package com.login.main;
+
+public class SecurityConfig {
+
+}

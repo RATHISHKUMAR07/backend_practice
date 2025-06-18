@@ -1,0 +1,13 @@
+server.port:8081
+spring.application.name=LoginDemo
+spring.data.mongodb.uri=mongodb://localhost:27017/userlist
+
+
+
+springdoc.api-docs.path=/api-docs
+
+# Specify the path of the Swagger UI
+springdoc.swagger-ui.path=/swagger-ui.html
+
+# Enable or disable Swagger UI
+springdoc.swagger-ui.enabled=true

@@ -1,0 +1,16 @@
+package Ds.Graphs;
+
+import java.util.LinkedList;
+
+public class Graph {
+	
+	int V;
+	LinkedList<Integer> adj[];
+	
+	Graph(){
+		
+	}
+
+	public static void main(String[] args) {}
+
+}

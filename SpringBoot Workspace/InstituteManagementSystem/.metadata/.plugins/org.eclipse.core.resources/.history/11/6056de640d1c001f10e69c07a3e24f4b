@@ -1,0 +1,8 @@
+package com.login.user;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository MongoRepository<Users, String>{
+
+}

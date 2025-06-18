@@ -1,0 +1,59 @@
+package com.login.user;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
+
+import javax.validation.constraints.Pattern;
+
+@Document
+public class User {
+	@Id
+	@Pattern(regexp="^[a-zA-Z0-9+_.-]+@gmail.com$" , message = "Enter a valid email")
+	private String email;
+	@Pattern(regexp="^[a-zA-Z ]+$" , message = "Enter a valid name with alphabets")
+	private String name;
+	@Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{7,}$", message = "Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 7 characters long")
+	private String password;
+	private List<String> roles;
+	
+	public User(@Pattern(regexp = "^[a-zA-Z0-9+_.-]+@gmail.com$", message = "Enter a valid email") String email,
+			@Pattern(regexp = "^[a-zA-Z ]+$", message = "Enter a valid name with alphabets") String name,
+			@Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{7,}$", message = "Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 7 characters long") String password, List<String> roles) {
+		
+		super();
+		this.email = email;
+		this.name = name;
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
+	
+	
+	
+}

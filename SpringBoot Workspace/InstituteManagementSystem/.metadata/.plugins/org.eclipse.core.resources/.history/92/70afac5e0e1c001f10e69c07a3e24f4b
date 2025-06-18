@@ -1,0 +1,27 @@
+package com.login.user;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService implements IUserService {
+	
+	@Autowired
+	private UserRepository userRepository;
+
+	@Override
+	public void addUser(User user) {
+		userRepository.save(user);
+	}
+
+	@Override
+	public void deleteUser(String email, String password) {
+		
+	}
+
+	@Override
+	public void updateUser(String email, String password, String nName, String nEmail, String nPassword) {
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.login.user;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface IUserService {
+	public String registerUser(User user);
+	public String loginUser(String email, String password);
+	public Optional<User> getAllUsers();
+	
+}

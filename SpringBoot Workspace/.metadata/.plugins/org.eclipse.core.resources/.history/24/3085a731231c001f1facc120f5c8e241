@@ -1,0 +1,42 @@
+package com.login.user;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService implements IUserService {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
+    private PasswordService passwordService;
+
+    @Override
+    public String registerUser(User user) {
+        // Encrypt the password before saving the user
+        user.setPassword(passwordService.encryptPassword(user.getPassword()));
+        userRepository.save(user);
+        return "User registered successfully";
+    }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public String loginUser(String email, String password) {
+        Optional<User> userOpt = userRepository.findByEmail(email);
+        if (userOpt.isPresent()) {
+            User user = userOpt.get();
+            if (passwordService.matchPassword(password, user.getPassword())) {
+                return "Login successful";
+            }
+        }
+        return "Invalid email or password";
+    }
+}

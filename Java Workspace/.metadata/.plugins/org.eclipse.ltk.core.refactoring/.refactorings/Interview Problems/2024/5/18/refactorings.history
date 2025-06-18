@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Frequency&apos; to &apos;FrequencySortWithComparator&apos;&#x0D;&#x0A;- Original project: &apos;Interview Problems&apos;&#x0D;&#x0A;- Original element: &apos;Frequency&apos;&#x0D;&#x0A;- Renamed element: &apos;FrequencySortWithComparator&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Frequency&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Frequency.java[Frequency" matchStrategy="1" name="FrequencySortWithComparator" qualified="false" references="true" similarDeclarations="false" stamp="1714562669355" textual="false" version="1.0"/>
+</session>

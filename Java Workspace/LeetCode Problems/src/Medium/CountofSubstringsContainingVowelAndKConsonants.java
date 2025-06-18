@@ -1,0 +1,46 @@
+package Medium;
+
+public class CountofSubstringsContainingVowelAndKConsonants {
+
+	public static void main(String[] args) {
+		System.out.println(countOfSubstrings("aeueio", 0));
+	}
+	
+public static long countOfSubstrings(String word, int k) {
+        
+        long count = 0;
+
+        for(int i=0;i<word.length()-4;i++){
+        	
+            if(isVowel(i, word, k)){
+                count++;
+            }
+        }
+        return count;
+    }
+    public static  boolean isVowel(int x, String word, int k){
+    	int y=x+k+5;
+    	if(y > word.length()) {
+    		while(y != word.length()) {
+    			y--;
+    		}
+    	}
+    	int vowelCount = 0;
+        for(int i=x;i<y;i++){
+        	if (!(word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u')) {
+        	    k--;
+        	}
+        	else {
+        		vowelCount++;
+        	}
+        }
+    	System.out.println(word.substring(x, y));
+    	System.out.println(k);
+    	System.out.println(vowelCount);
+        if(vowelCount == 5)
+            return true;
+        else
+            return false;
+    } 
+
+}

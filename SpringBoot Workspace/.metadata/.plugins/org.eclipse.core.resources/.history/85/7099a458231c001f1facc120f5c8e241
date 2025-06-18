@@ -1,0 +1,27 @@
+package com.login.user;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+public class UserController {
+
+    @Autowired
+    private IUserService iUserService;
+
+    @PostMapping("/user/register")
+    public String registerUser(@RequestBody User user) {
+        return iUserService.registerUser(user);
+    }
+
+    @GetMapping("/user")
+    public List<User> getAllUsers() {
+        return iUserService.getAllUsers();
+    }
+
+    @GetMapping("/user/login/{email}/{password}")
+    public String loginUser(@PathVariable("email") String email, @PathVariable("password") String password) {
+        return iUserService.loginUser(email, password);
+    }
+}

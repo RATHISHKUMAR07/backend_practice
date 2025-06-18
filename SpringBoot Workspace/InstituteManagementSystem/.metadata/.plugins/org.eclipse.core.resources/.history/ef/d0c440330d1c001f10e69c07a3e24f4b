@@ -1,0 +1,26 @@
+package com.login.user;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService implements IUserService {
+
+	@Override
+	public void addUser(User user) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteUser(String email, String password) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateUser(String email, String password, String nName, String nEmail, String nPassword) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
